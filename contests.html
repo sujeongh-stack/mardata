@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>공모전 안내 | 마케팅빅데이터학과</title>
@@ -117,6 +118,159 @@
   }
 
   .nav-inner a.disabled, .header-links a.disabled { color: #b8b8b8 !important; cursor: not-allowed; pointer-events: none; }
+
+  .contest-card-link { display: block; text-decoration: none; color: inherit; }
+  .contest-card-link:hover .contest-card { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(45,90,160,0.15); }
+  .update-info { background: #e8f4fd; border-left: 4px solid #2d5aa0; padding: 12px 18px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; color: #1a3a6b; }
+  .update-info strong { color: #2d5aa0; }
+
+/* ═══ NOTION DESIGN SYSTEM OVERRIDE ═══ */
+:root {
+  --notion-text: rgba(0,0,0,0.95);
+  --notion-text-2: #615d59;
+  --notion-text-3: #a39e98;
+  --notion-bg: #ffffff;
+  --notion-bg-2: #f6f5f4;
+  --notion-blue: #0075de;
+  --notion-blue-hover: #005bab;
+  --notion-blue-bg: #f2f9ff;
+  --notion-blue-text: #097fe8;
+  --notion-border: rgba(0,0,0,0.1);
+  --notion-shadow-card: 0 1px 0 rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.03), 0 4px 12px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.02);
+  --notion-shadow-hover: 0 2px 4px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.06), 0 16px 32px rgba(0,0,0,0.04), 0 24px 48px rgba(0,0,0,0.03);
+  --notion-radius-sm: 4px;
+  --notion-radius: 8px;
+  --notion-radius-lg: 12px;
+  --notion-radius-xl: 16px;
+}
+* { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif !important; }
+body { background: var(--notion-bg) !important; color: var(--notion-text) !important; -webkit-font-smoothing: antialiased; }
+
+/* Header — warm white, minimal */
+.header { background: var(--notion-bg) !important; border-bottom: 1px solid var(--notion-border) !important; box-shadow: none !important; }
+.header-top { background: var(--notion-bg) !important; padding: 14px 24px !important; max-width: 1200px; margin: 0 auto; }
+.logo { color: var(--notion-text) !important; font-size: 16px !important; font-weight: 700 !important; letter-spacing: -0.3px; }
+.logo strong { color: var(--notion-text) !important; font-weight: 700 !important; margin-left: 6px; }
+.header-links a { color: var(--notion-text-2) !important; font-size: 14px !important; font-weight: 500 !important; }
+.header-links a:hover { color: var(--notion-text) !important; }
+.nav { background: var(--notion-bg) !important; border-top: none !important; border-bottom: 1px solid var(--notion-border) !important; }
+.nav-inner { max-width: 1200px !important; padding: 0 24px !important; }
+.nav-inner a { color: var(--notion-text-2) !important; padding: 14px 18px !important; font-size: 15px !important; font-weight: 600 !important; border-bottom: 2px solid transparent !important; transition: color 0.15s; }
+.nav-inner a:hover { color: var(--notion-text) !important; background: transparent !important; }
+.nav-inner a.active { color: var(--notion-text) !important; border-bottom-color: var(--notion-text) !important; background: transparent !important; }
+.nav-inner a.disabled { color: #d4d2d0 !important; }
+
+/* Page banner — soft warm */
+.page-banner { background: var(--notion-bg-2) !important; color: var(--notion-text) !important; padding: 72px 24px 56px !important; text-align: left !important; border-bottom: 1px solid var(--notion-border) !important; }
+.page-banner > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+.page-banner h1 { font-size: 48px !important; font-weight: 700 !important; line-height: 1.05 !important; letter-spacing: -1.5px !important; color: var(--notion-text) !important; margin-bottom: 12px !important; }
+.page-banner p { font-size: 18px !important; color: var(--notion-text-2) !important; font-weight: 400 !important; }
+.breadcrumb { color: var(--notion-text-3) !important; font-size: 13px !important; margin-top: 16px !important; }
+.update-badge { background: var(--notion-blue-bg) !important; color: var(--notion-blue-text) !important; border: none !important; border-radius: 9999px !important; padding: 6px 14px !important; font-size: 12px !important; font-weight: 600 !important; display: inline-block; margin-top: 14px; }
+
+/* Container */
+.container { max-width: 1200px !important; padding: 48px 24px !important; }
+
+/* Stats row / stat-card */
+.stats-row, .crawl-stats { gap: 16px !important; }
+.stat-card, .crawl-stat { background: var(--notion-bg) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius-lg) !important; box-shadow: var(--notion-shadow-card) !important; padding: 24px !important; }
+.stat-number, .crawl-stat-num { color: var(--notion-text) !important; font-weight: 700 !important; font-size: 32px !important; letter-spacing: -1px; }
+.stat-label, .crawl-stat-label { color: var(--notion-text-2) !important; font-size: 13px !important; font-weight: 500 !important; }
+
+/* Filter chips / tabs */
+.filter-chip, .tab-filter, .tag { background: var(--notion-bg-2) !important; border: 1px solid var(--notion-border) !important; color: var(--notion-text-2) !important; border-radius: 9999px !important; padding: 6px 14px !important; font-size: 13px !important; font-weight: 500 !important; }
+.filter-chip.active, .tab-filter.active { background: var(--notion-text) !important; color: var(--notion-bg) !important; border-color: var(--notion-text) !important; }
+.filter-chip .count { color: inherit !important; opacity: 0.7; }
+
+/* Search + create button */
+.search-box input { background: var(--notion-bg-2) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius) !important; padding: 10px 16px !important; font-size: 14px !important; }
+.search-box button, .create-btn, .btn-submit { background: var(--notion-blue) !important; color: #fff !important; border: none !important; border-radius: var(--notion-radius) !important; padding: 10px 20px !important; font-weight: 600 !important; font-size: 14px !important; box-shadow: none !important; transition: background 0.15s; }
+.search-box button:hover, .create-btn:hover, .btn-submit:hover { background: var(--notion-blue-hover) !important; }
+
+/* Generic cards (cert, study, job, contest) */
+.cert-card, .study-card, .job-card, .contest-card {
+  background: var(--notion-bg) !important;
+  border: 1px solid var(--notion-border) !important;
+  border-radius: var(--notion-radius-lg) !important;
+  box-shadow: var(--notion-shadow-card) !important;
+  transition: all 0.2s ease;
+}
+.cert-card:hover, .study-card:hover, .job-card:hover, .contest-card:hover {
+  border-color: rgba(0,0,0,0.2) !important;
+  box-shadow: var(--notion-shadow-hover) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Titles inside cards */
+.cert-title, .card-title, .job-title, .job-company { color: var(--notion-text) !important; font-weight: 600 !important; letter-spacing: -0.2px; }
+.card-desc, .job-details, .cert-sub, .card-org { color: var(--notion-text-2) !important; font-size: 14px !important; }
+.card-meta, .crawl-stat-label, .job-source, .card-deadline { color: var(--notion-text-3) !important; font-size: 12px !important; }
+
+/* Pill badges (tags, skills, categories) */
+.tag.cert, .tag.code, .tag.project, .tag.mkt,
+.cat-tag, .job-skill-tag, .recommend-tag,
+.tag.recruiting, .tag.closed {
+  background: var(--notion-blue-bg) !important;
+  color: var(--notion-blue-text) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 3px 10px !important;
+  letter-spacing: 0.1px;
+}
+.tag.recruiting { background: #ecfdf3 !important; color: #037a48 !important; }
+.tag.closed { background: #f4f3f1 !important; color: var(--notion-text-3) !important; }
+
+/* Job dday */
+.job-dday.urgent, .card-dday.urgent { color: #d73a32 !important; font-weight: 700 !important; }
+.job-dday.normal, .card-dday.normal { color: var(--notion-text) !important; }
+.job-dday.closed { color: var(--notion-text-3) !important; }
+.job-type-badge { background: var(--notion-blue-bg) !important; color: var(--notion-blue-text) !important; border: none !important; border-radius: 9999px !important; font-size: 11px !important; font-weight: 700 !important; padding: 4px 12px !important; text-transform: uppercase; letter-spacing: 0.5px; }
+.new-badge { background: #fef1ec !important; color: #d35400 !important; border: none !important; font-size: 10px !important; padding: 2px 8px !important; border-radius: 9999px !important; font-weight: 700 !important; }
+
+/* Join button */
+.join-btn, .apply-link { border-radius: var(--notion-radius) !important; font-weight: 600 !important; font-size: 13px !important; padding: 8px 16px !important; border: 1px solid var(--notion-border) !important; background: var(--notion-bg) !important; color: var(--notion-text) !important; text-decoration: none !important; display: inline-block; }
+.join-btn.open { background: var(--notion-blue) !important; color: #fff !important; border-color: var(--notion-blue) !important; }
+.join-btn.open:hover { background: var(--notion-blue-hover) !important; }
+.join-btn.joined { background: var(--notion-bg-2) !important; color: var(--notion-text) !important; }
+.join-btn.closed { background: var(--notion-bg-2) !important; color: var(--notion-text-3) !important; cursor: not-allowed; }
+.apply-link { color: var(--notion-blue) !important; border: none !important; padding: 0 !important; background: transparent !important; }
+
+/* Avatars */
+.avatar { border: 2px solid var(--notion-bg) !important; font-weight: 600 !important; }
+
+/* Contest card image block */
+.card-image { border-radius: var(--notion-radius-lg) var(--notion-radius-lg) 0 0 !important; background: var(--notion-bg-2) !important; color: var(--notion-text) !important; }
+.card-image-text { color: var(--notion-text) !important; opacity: 0.3; font-weight: 800 !important; letter-spacing: 2px; }
+.card-source-badge { background: rgba(255,255,255,0.9) !important; color: var(--notion-text) !important; border: 1px solid var(--notion-border) !important; font-weight: 600 !important; }
+.card-dday { background: var(--notion-text) !important; color: var(--notion-bg) !important; border-radius: 9999px !important; font-weight: 600 !important; padding: 4px 10px !important; }
+.card-dday.urgent { background: #d73a32 !important; color: #fff !important; }
+
+/* Prize */
+.card-prize { border-top: 1px solid var(--notion-border) !important; padding-top: 12px !important; }
+.prize-label { color: var(--notion-text-3) !important; }
+.prize-value { color: var(--notion-text) !important; font-weight: 700 !important; }
+
+/* Modal */
+.modal { background: var(--notion-bg) !important; border-radius: var(--notion-radius-xl) !important; box-shadow: 0 20px 60px rgba(0,0,0,0.15) !important; border: 1px solid var(--notion-border) !important; }
+.modal h2 { color: var(--notion-text) !important; font-weight: 700 !important; letter-spacing: -0.5px; }
+.form-group label { color: var(--notion-text-2) !important; font-weight: 600 !important; font-size: 13px !important; }
+.form-group input, .form-group select, .form-group textarea { background: var(--notion-bg) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius) !important; color: var(--notion-text) !important; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--notion-blue) !important; }
+.btn-cancel { background: var(--notion-bg) !important; border: 1px solid var(--notion-border) !important; color: var(--notion-text) !important; border-radius: var(--notion-radius) !important; }
+
+/* Recommend box */
+.recommend-box { background: var(--notion-bg-2) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius-lg) !important; }
+.recommend-box h3 { color: var(--notion-text) !important; }
+
+/* Footer */
+.footer { background: var(--notion-bg) !important; color: var(--notion-text-3) !important; border-top: 1px solid var(--notion-border) !important; padding: 48px 24px !important; }
+
+/* Update info banner */
+.update-info { background: var(--notion-blue-bg) !important; border-left: 3px solid var(--notion-blue) !important; border-radius: var(--notion-radius) !important; color: var(--notion-text) !important; padding: 14px 18px !important; }
+.update-info strong { color: var(--notion-blue) !important; }
+
 </style>
 </head>
 <body>
@@ -142,6 +296,9 @@
 </div>
 
 <div class="container">
+
+  <div class="update-info">🔄 <strong>자동 업데이트</strong> 매일 오전 8시 링커리어, 위비티, 씽굿 등에서 최신 공모전을 수집합니다. 마지막 업데이트: <strong id="lastUpdate">2026.04.08</strong></div>
+
 
   <!-- Stats -->
   <div class="stats-row">
@@ -222,162 +379,22 @@
   </div>
 
   <!-- Contest Grid -->
-  <div class="contest-grid">
+    <div class="contest-grid">
 
-    <div class="contest-card">
-      <div class="card-image data">
-        <span class="card-image-text">DATA</span>
-        <span class="card-dday urgent">D-3</span>
-        <span class="card-source-badge">데이콘</span>
-      </div>
-      <div class="card-body">
-        <div class="card-category">
-          <span class="cat-tag data">데이터분석</span>
-          <span class="cat-tag ai">AI</span>
-        </div>
-        <div class="card-title">2026 공공데이터 활용 빅데이터 분석 경진대회</div>
-        <div class="card-org">한국데이터산업진흥원</div>
-        <div class="card-info-row">
-          <span>👥 팀(2~4인)</span>
-          <span>🎓 대학(원)생</span>
-        </div>
-        <div class="card-prize">
-          <span class="prize-label">총 상금</span>
-          <span class="prize-value">2,000만원</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="card-deadline">마감: <strong>03.20(금)</strong></div>
-        <a href="#" class="apply-link">상세보기 →</a>
-      </div>
-    </div>
-
+    <a href="https://kosac.ad.co.kr/" target="_blank" rel="noopener" class="contest-card-link">
     <div class="contest-card">
       <div class="card-image marketing">
-        <span class="card-image-text">MKT</span>
-        <span class="card-dday urgent">D-5</span>
-        <span class="card-source-badge">씽굿</span>
-      </div>
-      <div class="card-body">
-        <div class="card-category">
-          <span class="cat-tag marketing">마케팅</span>
-        </div>
-        <div class="card-title">제12회 대학생 디지털 마케팅 아이디어 공모전</div>
-        <div class="card-org">한국디지털광고협회</div>
-        <div class="card-info-row">
-          <span>👥 팀(3~5인)</span>
-          <span>🎓 대학생</span>
-        </div>
-        <div class="card-prize">
-          <span class="prize-label">총 상금</span>
-          <span class="prize-value">1,500만원</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="card-deadline">마감: <strong>03.22(일)</strong></div>
-        <a href="#" class="apply-link">상세보기 →</a>
-      </div>
-    </div>
-
-    <div class="contest-card">
-      <div class="card-image ai">
-        <span class="card-image-text">AI</span>
-        <span class="card-dday normal">D-14</span>
-        <span class="card-source-badge">데이콘</span>
-      </div>
-      <div class="card-body">
-        <div class="card-category">
-          <span class="cat-tag ai">AI</span>
-          <span class="cat-tag data">데이터분석</span>
-        </div>
-        <div class="card-title">AI 기반 고객 이탈 예측 모델링 챌린지</div>
-        <div class="card-org">네이버 클라우드</div>
-        <div class="card-info-row">
-          <span>👤 개인/팀</span>
-          <span>🌐 누구나</span>
-        </div>
-        <div class="card-prize">
-          <span class="prize-label">총 상금</span>
-          <span class="prize-value">3,000만원</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="card-deadline">마감: <strong>03.31(화)</strong></div>
-        <a href="#" class="apply-link">상세보기 →</a>
-      </div>
-    </div>
-
-    <div class="contest-card">
-      <div class="card-image idea">
-        <span class="card-image-text">IDEA</span>
-        <span class="card-dday normal">D-21</span>
+        <span class="card-image-text">AD</span>
+        <span class="card-dday normal">D-35</span>
         <span class="card-source-badge">링커리어</span>
       </div>
       <div class="card-body">
-        <div class="card-category">
-          <span class="cat-tag idea">아이디어</span>
-          <span class="cat-tag marketing">마케팅</span>
-        </div>
-        <div class="card-title">2026 브랜드 마케팅 전략 기획 공모전</div>
-        <div class="card-org">CJ올리브영</div>
+        <div class="card-category"><span class="cat-tag marketing">광고/홍보</span></div>
+        <div class="card-title">2026 대한민국 대학생 광고대회 (KOSAC)</div>
+        <div class="card-org">한국광고총연합회</div>
         <div class="card-info-row">
           <span>👥 팀(2~5인)</span>
-          <span>🎓 대학생</span>
-        </div>
-        <div class="card-prize">
-          <span class="prize-label">총 상금</span>
-          <span class="prize-value">1,000만원</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="card-deadline">마감: <strong>04.07(화)</strong></div>
-        <a href="#" class="apply-link">상세보기 →</a>
-      </div>
-    </div>
-
-    <div class="contest-card">
-      <div class="card-image data">
-        <span class="card-image-text">DATA</span>
-        <span class="card-dday normal">D-28</span>
-        <span class="card-source-badge">위비티</span>
-      </div>
-      <div class="card-body">
-        <div class="card-category">
-          <span class="cat-tag data">데이터분석</span>
-        </div>
-        <div class="card-title">대전시 공공데이터 활용 아이디어 경진대회</div>
-        <div class="card-org">대전광역시 / 대전정보문화산업진흥원</div>
-        <div class="card-info-row">
-          <span>👤 개인/팀</span>
-          <span>🎓 대학생 우대</span>
-        </div>
-        <div class="card-prize">
-          <span class="prize-label">총 상금</span>
-          <span class="prize-value">800만원</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="card-deadline">마감: <strong>04.14(화)</strong></div>
-        <a href="#" class="apply-link">상세보기 →</a>
-      </div>
-    </div>
-
-    <div class="contest-card">
-      <div class="card-image design">
-        <span class="card-image-text">SNS</span>
-        <span class="card-dday new-tag">NEW</span>
-        <span class="card-source-badge">캠퍼스픽</span>
-      </div>
-      <div class="card-body">
-        <div class="card-category">
-          <span class="cat-tag marketing">마케팅</span>
-          <span class="cat-tag design">콘텐츠</span>
-        </div>
-        <div class="card-title">소셜미디어 콘텐츠 크리에이터 챌린지 2026</div>
-        <div class="card-org">한국콘텐츠진흥원</div>
-        <div class="card-info-row">
-          <span>👤 개인</span>
-          <span>🌐 누구나</span>
+          <span>🎓 대학(원)생</span>
         </div>
         <div class="card-prize">
           <span class="prize-label">총 상금</span>
@@ -385,105 +402,150 @@
         </div>
       </div>
       <div class="card-footer">
-        <div class="card-deadline">마감: <strong>04.30(목)</strong></div>
-        <a href="#" class="apply-link">상세보기 →</a>
+        <div class="card-deadline">마감: <strong>05.12(화)</strong></div>
+        <span class="apply-link">접수하기 →</span>
       </div>
     </div>
+    </a>
 
+    <a href="https://bigdata.seoul.go.kr/" target="_blank" rel="noopener" class="contest-card-link">
     <div class="contest-card">
-      <div class="card-image ai">
-        <span class="card-image-text">ML</span>
-        <span class="card-dday new-tag">NEW</span>
-        <span class="card-source-badge">데이콘</span>
+      <div class="card-image data">
+        <span class="card-image-text">DATA</span>
+        <span class="card-dday normal">D-35</span>
+        <span class="card-source-badge">서울시</span>
       </div>
       <div class="card-body">
-        <div class="card-category">
-          <span class="cat-tag ai">AI/ML</span>
-          <span class="cat-tag data">빅데이터</span>
-        </div>
-        <div class="card-title">금융 데이터 기반 신용평가 모델 해커톤</div>
-        <div class="card-org">신한은행</div>
+        <div class="card-category"><span class="cat-tag data">데이터분석</span><span class="cat-tag ai">빅데이터</span></div>
+        <div class="card-title">2026 서울시 빅데이터 경진대회</div>
+        <div class="card-org">서울특별시</div>
         <div class="card-info-row">
-          <span>👥 팀(1~3인)</span>
-          <span>🎓 대학(원)생</span>
+          <span>👥 누구나</span>
+          <span>🎓 전학년</span>
         </div>
         <div class="card-prize">
           <span class="prize-label">총 상금</span>
-          <span class="prize-value">2,500만원</span>
+          <span class="prize-value">미정</span>
         </div>
       </div>
       <div class="card-footer">
-        <div class="card-deadline">마감: <strong>05.09(토)</strong></div>
-        <a href="#" class="apply-link">상세보기 →</a>
+        <div class="card-deadline">마감: <strong>05.13(수)</strong></div>
+        <span class="apply-link">접수하기 →</span>
       </div>
     </div>
+    </a>
 
+    <a href="https://linkareer.com/activity/288392" target="_blank" rel="noopener" class="contest-card-link">
     <div class="contest-card">
       <div class="card-image marketing">
-        <span class="card-image-text">AD</span>
-        <span class="card-dday new-tag">NEW</span>
-        <span class="card-source-badge">씽굿</span>
+        <span class="card-image-text">MKT</span>
+        <span class="card-dday new-tag">모집중</span>
+        <span class="card-source-badge">링커리어</span>
       </div>
       <div class="card-body">
-        <div class="card-category">
-          <span class="cat-tag marketing">광고/홍보</span>
-        </div>
-        <div class="card-title">제28회 대한민국 대학생 광고 공모전 (KOSAC)</div>
-        <div class="card-org">한국광고총연합회</div>
+        <div class="card-category"><span class="cat-tag marketing">마케팅</span><span class="cat-tag idea">서비스기획</span></div>
+        <div class="card-title">2026 제5회 링글 서비스기획&마케팅 공모전</div>
+        <div class="card-org">링글(Ringle)</div>
         <div class="card-info-row">
-          <span>👥 팀(3~6인)</span>
-          <span>🎓 대학(원)생</span>
+          <span>👥 개인/팀(~4인)</span>
+          <span>🎓 대학생</span>
         </div>
         <div class="card-prize">
           <span class="prize-label">총 상금</span>
-          <span class="prize-value">1,200만원</span>
+          <span class="prize-value">5,400만원 상당</span>
         </div>
       </div>
       <div class="card-footer">
-        <div class="card-deadline">마감: <strong>05.15(금)</strong></div>
-        <a href="#" class="apply-link">상세보기 →</a>
+        <div class="card-deadline">마감: <strong>진행중</strong></div>
+        <span class="apply-link">접수하기 →</span>
       </div>
     </div>
+    </a>
 
+    <a href="https://www.2026datacontest.co.kr/" target="_blank" rel="noopener" class="contest-card-link">
     <div class="contest-card">
-      <div class="card-image idea">
-        <span class="card-image-text">BIZ</span>
-        <span class="card-dday new-tag">NEW</span>
-        <span class="card-source-badge">위비티</span>
+      <div class="card-image ai">
+        <span class="card-image-text">AI</span>
+        <span class="card-dday normal">D-36</span>
+        <span class="card-source-badge">공식사이트</span>
       </div>
       <div class="card-body">
-        <div class="card-category">
-          <span class="cat-tag idea">창업/기획</span>
-          <span class="cat-tag data">데이터</span>
-        </div>
-        <div class="card-title">데이터 기반 소셜벤처 창업 아이디어 공모전</div>
-        <div class="card-org">중소벤처기업부</div>
+        <div class="card-category"><span class="cat-tag data">데이터분석</span><span class="cat-tag ai">AI</span></div>
+        <div class="card-title">2026 고용노동 공공데이터 AI 활용 공모전</div>
+        <div class="card-org">고용노동부</div>
         <div class="card-info-row">
-          <span>👥 팀(2~5인)</span>
-          <span>🌐 누구나</span>
+          <span>👥 개인/팀</span>
+          <span>🎓 누구나</span>
         </div>
         <div class="card-prize">
           <span class="prize-label">총 상금</span>
-          <span class="prize-value">1,500만원 + 창업지원</span>
+          <span class="prize-value">1,800만원</span>
         </div>
       </div>
       <div class="card-footer">
-        <div class="card-deadline">마감: <strong>05.31(일)</strong></div>
-        <a href="#" class="apply-link">상세보기 →</a>
+        <div class="card-deadline">마감: <strong>05.14(목)</strong></div>
+        <span class="apply-link">접수하기 →</span>
       </div>
     </div>
+    </a>
+
+    <a href="https://linkareer.com/activity/298749" target="_blank" rel="noopener" class="contest-card-link">
+    <div class="contest-card">
+      <div class="card-image data">
+        <span class="card-image-text">DATA</span>
+        <span class="card-dday new-tag">모집중</span>
+        <span class="card-source-badge">링커리어</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category"><span class="cat-tag data">데이터분석</span><span class="cat-tag idea">도시계획</span></div>
+        <div class="card-title">2026 국토도시 데이터 분석 공모전</div>
+        <div class="card-org">한국토지주택공사(LH)</div>
+        <div class="card-info-row">
+          <span>👥 누구나</span>
+          <span>🎓 전학년</span>
+        </div>
+        <div class="card-prize">
+          <span class="prize-label">총 상금</span>
+          <span class="prize-value">미정</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-deadline">마감: <strong>진행중</strong></div>
+        <span class="apply-link">접수하기 →</span>
+      </div>
+    </div>
+    </a>
+
+    <a href="https://linkareer.com/activity/302676" target="_blank" rel="noopener" class="contest-card-link">
+    <div class="contest-card">
+      <div class="card-image marketing">
+        <span class="card-image-text">BRAND</span>
+        <span class="card-dday urgent">마감</span>
+        <span class="card-source-badge">링커리어</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category"><span class="cat-tag marketing">마케팅</span><span class="cat-tag design">브랜딩</span></div>
+        <div class="card-title">2026 브랜드 마케팅 아이디어 공모전</div>
+        <div class="card-org">Brand it your way</div>
+        <div class="card-info-row">
+          <span>👥 대학생</span>
+          <span>🎓 전학년</span>
+        </div>
+        <div class="card-prize">
+          <span class="prize-label">총 상금</span>
+          <span class="prize-value">미정</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-deadline">마감: <strong>03.20(금)</strong></div>
+        <span class="apply-link">접수하기 →</span>
+      </div>
+    </div>
+    </a>
 
   </div>
 
-  <!-- Pagination -->
-  <div class="pagination">
-    <button class="page-btn active">1</button>
-    <button class="page-btn">2</button>
-    <button class="page-btn">3</button>
-    <button class="page-btn">→</button>
   </div>
-
-</div>
 
 <div class="footer">
   목원대학교 마케팅빅데이터학과<br>
