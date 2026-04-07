@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>스터디 모집 | 마케팅빅데이터학과</title>
@@ -108,6 +109,154 @@
   }
 
   .nav-inner a.disabled, .header-links a.disabled { color: #b8b8b8 !important; cursor: not-allowed; pointer-events: none; }
+
+/* ═══ NOTION DESIGN SYSTEM OVERRIDE ═══ */
+:root {
+  --notion-text: rgba(0,0,0,0.95);
+  --notion-text-2: #615d59;
+  --notion-text-3: #a39e98;
+  --notion-bg: #ffffff;
+  --notion-bg-2: #f6f5f4;
+  --notion-blue: #0075de;
+  --notion-blue-hover: #005bab;
+  --notion-blue-bg: #f2f9ff;
+  --notion-blue-text: #097fe8;
+  --notion-border: rgba(0,0,0,0.1);
+  --notion-shadow-card: 0 1px 0 rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.03), 0 4px 12px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.02);
+  --notion-shadow-hover: 0 2px 4px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.06), 0 16px 32px rgba(0,0,0,0.04), 0 24px 48px rgba(0,0,0,0.03);
+  --notion-radius-sm: 4px;
+  --notion-radius: 8px;
+  --notion-radius-lg: 12px;
+  --notion-radius-xl: 16px;
+}
+* { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif !important; }
+body { background: var(--notion-bg) !important; color: var(--notion-text) !important; -webkit-font-smoothing: antialiased; }
+
+/* Header — warm white, minimal */
+.header { background: var(--notion-bg) !important; border-bottom: 1px solid var(--notion-border) !important; box-shadow: none !important; }
+.header-top { background: var(--notion-bg) !important; padding: 14px 24px !important; max-width: 1200px; margin: 0 auto; }
+.logo { color: var(--notion-text) !important; font-size: 16px !important; font-weight: 700 !important; letter-spacing: -0.3px; }
+.logo strong { color: var(--notion-text) !important; font-weight: 700 !important; margin-left: 6px; }
+.header-links a { color: var(--notion-text-2) !important; font-size: 14px !important; font-weight: 500 !important; }
+.header-links a:hover { color: var(--notion-text) !important; }
+.nav { background: var(--notion-bg) !important; border-top: none !important; border-bottom: 1px solid var(--notion-border) !important; }
+.nav-inner { max-width: 1200px !important; padding: 0 24px !important; }
+.nav-inner a { color: var(--notion-text-2) !important; padding: 14px 18px !important; font-size: 15px !important; font-weight: 600 !important; border-bottom: 2px solid transparent !important; transition: color 0.15s; }
+.nav-inner a:hover { color: var(--notion-text) !important; background: transparent !important; }
+.nav-inner a.active { color: var(--notion-text) !important; border-bottom-color: var(--notion-text) !important; background: transparent !important; }
+.nav-inner a.disabled { color: #d4d2d0 !important; }
+
+/* Page banner — soft warm */
+.page-banner { background: var(--notion-bg-2) !important; color: var(--notion-text) !important; padding: 72px 24px 56px !important; text-align: left !important; border-bottom: 1px solid var(--notion-border) !important; }
+.page-banner > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+.page-banner h1 { font-size: 48px !important; font-weight: 700 !important; line-height: 1.05 !important; letter-spacing: -1.5px !important; color: var(--notion-text) !important; margin-bottom: 12px !important; }
+.page-banner p { font-size: 18px !important; color: var(--notion-text-2) !important; font-weight: 400 !important; }
+.breadcrumb { color: var(--notion-text-3) !important; font-size: 13px !important; margin-top: 16px !important; }
+.update-badge { background: var(--notion-blue-bg) !important; color: var(--notion-blue-text) !important; border: none !important; border-radius: 9999px !important; padding: 6px 14px !important; font-size: 12px !important; font-weight: 600 !important; display: inline-block; margin-top: 14px; }
+
+/* Container */
+.container { max-width: 1200px !important; padding: 48px 24px !important; }
+
+/* Stats row / stat-card */
+.stats-row, .crawl-stats { gap: 16px !important; }
+.stat-card, .crawl-stat { background: var(--notion-bg) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius-lg) !important; box-shadow: var(--notion-shadow-card) !important; padding: 24px !important; }
+.stat-number, .crawl-stat-num { color: var(--notion-text) !important; font-weight: 700 !important; font-size: 32px !important; letter-spacing: -1px; }
+.stat-label, .crawl-stat-label { color: var(--notion-text-2) !important; font-size: 13px !important; font-weight: 500 !important; }
+
+/* Filter chips / tabs */
+.filter-chip, .tab-filter, .tag { background: var(--notion-bg-2) !important; border: 1px solid var(--notion-border) !important; color: var(--notion-text-2) !important; border-radius: 9999px !important; padding: 6px 14px !important; font-size: 13px !important; font-weight: 500 !important; }
+.filter-chip.active, .tab-filter.active { background: var(--notion-text) !important; color: var(--notion-bg) !important; border-color: var(--notion-text) !important; }
+.filter-chip .count { color: inherit !important; opacity: 0.7; }
+
+/* Search + create button */
+.search-box input { background: var(--notion-bg-2) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius) !important; padding: 10px 16px !important; font-size: 14px !important; }
+.search-box button, .create-btn, .btn-submit { background: var(--notion-blue) !important; color: #fff !important; border: none !important; border-radius: var(--notion-radius) !important; padding: 10px 20px !important; font-weight: 600 !important; font-size: 14px !important; box-shadow: none !important; transition: background 0.15s; }
+.search-box button:hover, .create-btn:hover, .btn-submit:hover { background: var(--notion-blue-hover) !important; }
+
+/* Generic cards (cert, study, job, contest) */
+.cert-card, .study-card, .job-card, .contest-card {
+  background: var(--notion-bg) !important;
+  border: 1px solid var(--notion-border) !important;
+  border-radius: var(--notion-radius-lg) !important;
+  box-shadow: var(--notion-shadow-card) !important;
+  transition: all 0.2s ease;
+}
+.cert-card:hover, .study-card:hover, .job-card:hover, .contest-card:hover {
+  border-color: rgba(0,0,0,0.2) !important;
+  box-shadow: var(--notion-shadow-hover) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Titles inside cards */
+.cert-title, .card-title, .job-title, .job-company { color: var(--notion-text) !important; font-weight: 600 !important; letter-spacing: -0.2px; }
+.card-desc, .job-details, .cert-sub, .card-org { color: var(--notion-text-2) !important; font-size: 14px !important; }
+.card-meta, .crawl-stat-label, .job-source, .card-deadline { color: var(--notion-text-3) !important; font-size: 12px !important; }
+
+/* Pill badges (tags, skills, categories) */
+.tag.cert, .tag.code, .tag.project, .tag.mkt,
+.cat-tag, .job-skill-tag, .recommend-tag,
+.tag.recruiting, .tag.closed {
+  background: var(--notion-blue-bg) !important;
+  color: var(--notion-blue-text) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 3px 10px !important;
+  letter-spacing: 0.1px;
+}
+.tag.recruiting { background: #ecfdf3 !important; color: #037a48 !important; }
+.tag.closed { background: #f4f3f1 !important; color: var(--notion-text-3) !important; }
+
+/* Job dday */
+.job-dday.urgent, .card-dday.urgent { color: #d73a32 !important; font-weight: 700 !important; }
+.job-dday.normal, .card-dday.normal { color: var(--notion-text) !important; }
+.job-dday.closed { color: var(--notion-text-3) !important; }
+.job-type-badge { background: var(--notion-blue-bg) !important; color: var(--notion-blue-text) !important; border: none !important; border-radius: 9999px !important; font-size: 11px !important; font-weight: 700 !important; padding: 4px 12px !important; text-transform: uppercase; letter-spacing: 0.5px; }
+.new-badge { background: #fef1ec !important; color: #d35400 !important; border: none !important; font-size: 10px !important; padding: 2px 8px !important; border-radius: 9999px !important; font-weight: 700 !important; }
+
+/* Join button */
+.join-btn, .apply-link { border-radius: var(--notion-radius) !important; font-weight: 600 !important; font-size: 13px !important; padding: 8px 16px !important; border: 1px solid var(--notion-border) !important; background: var(--notion-bg) !important; color: var(--notion-text) !important; text-decoration: none !important; display: inline-block; }
+.join-btn.open { background: var(--notion-blue) !important; color: #fff !important; border-color: var(--notion-blue) !important; }
+.join-btn.open:hover { background: var(--notion-blue-hover) !important; }
+.join-btn.joined { background: var(--notion-bg-2) !important; color: var(--notion-text) !important; }
+.join-btn.closed { background: var(--notion-bg-2) !important; color: var(--notion-text-3) !important; cursor: not-allowed; }
+.apply-link { color: var(--notion-blue) !important; border: none !important; padding: 0 !important; background: transparent !important; }
+
+/* Avatars */
+.avatar { border: 2px solid var(--notion-bg) !important; font-weight: 600 !important; }
+
+/* Contest card image block */
+.card-image { border-radius: var(--notion-radius-lg) var(--notion-radius-lg) 0 0 !important; background: var(--notion-bg-2) !important; color: var(--notion-text) !important; }
+.card-image-text { color: var(--notion-text) !important; opacity: 0.3; font-weight: 800 !important; letter-spacing: 2px; }
+.card-source-badge { background: rgba(255,255,255,0.9) !important; color: var(--notion-text) !important; border: 1px solid var(--notion-border) !important; font-weight: 600 !important; }
+.card-dday { background: var(--notion-text) !important; color: var(--notion-bg) !important; border-radius: 9999px !important; font-weight: 600 !important; padding: 4px 10px !important; }
+.card-dday.urgent { background: #d73a32 !important; color: #fff !important; }
+
+/* Prize */
+.card-prize { border-top: 1px solid var(--notion-border) !important; padding-top: 12px !important; }
+.prize-label { color: var(--notion-text-3) !important; }
+.prize-value { color: var(--notion-text) !important; font-weight: 700 !important; }
+
+/* Modal */
+.modal { background: var(--notion-bg) !important; border-radius: var(--notion-radius-xl) !important; box-shadow: 0 20px 60px rgba(0,0,0,0.15) !important; border: 1px solid var(--notion-border) !important; }
+.modal h2 { color: var(--notion-text) !important; font-weight: 700 !important; letter-spacing: -0.5px; }
+.form-group label { color: var(--notion-text-2) !important; font-weight: 600 !important; font-size: 13px !important; }
+.form-group input, .form-group select, .form-group textarea { background: var(--notion-bg) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius) !important; color: var(--notion-text) !important; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--notion-blue) !important; }
+.btn-cancel { background: var(--notion-bg) !important; border: 1px solid var(--notion-border) !important; color: var(--notion-text) !important; border-radius: var(--notion-radius) !important; }
+
+/* Recommend box */
+.recommend-box { background: var(--notion-bg-2) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius-lg) !important; }
+.recommend-box h3 { color: var(--notion-text) !important; }
+
+/* Footer */
+.footer { background: var(--notion-bg) !important; color: var(--notion-text-3) !important; border-top: 1px solid var(--notion-border) !important; padding: 48px 24px !important; }
+
+/* Update info banner */
+.update-info { background: var(--notion-blue-bg) !important; border-left: 3px solid var(--notion-blue) !important; border-radius: var(--notion-radius) !important; color: var(--notion-text) !important; padding: 14px 18px !important; }
+.update-info strong { color: var(--notion-blue) !important; }
+
 </style>
 </head>
 <body>
