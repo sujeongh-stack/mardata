@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>인턴/취업 정보 | 마케팅빅데이터학과</title>
@@ -101,6 +102,159 @@
   }
 
   .nav-inner a.disabled, .header-links a.disabled { color: #b8b8b8 !important; cursor: not-allowed; pointer-events: none; }
+
+  .job-card-link { display: block; text-decoration: none; color: inherit; margin-bottom: 12px; }
+  .job-card-link:hover .job-card { box-shadow: 0 6px 20px rgba(45,90,160,0.15); }
+  .update-info { background: #e8f4fd; border-left: 4px solid #2d5aa0; padding: 12px 18px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; color: #1a3a6b; }
+  .update-info strong { color: #2d5aa0; }
+
+/* ═══ NOTION DESIGN SYSTEM OVERRIDE ═══ */
+:root {
+  --notion-text: rgba(0,0,0,0.95);
+  --notion-text-2: #615d59;
+  --notion-text-3: #a39e98;
+  --notion-bg: #ffffff;
+  --notion-bg-2: #f6f5f4;
+  --notion-blue: #0075de;
+  --notion-blue-hover: #005bab;
+  --notion-blue-bg: #f2f9ff;
+  --notion-blue-text: #097fe8;
+  --notion-border: rgba(0,0,0,0.1);
+  --notion-shadow-card: 0 1px 0 rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.03), 0 4px 12px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.02);
+  --notion-shadow-hover: 0 2px 4px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.06), 0 16px 32px rgba(0,0,0,0.04), 0 24px 48px rgba(0,0,0,0.03);
+  --notion-radius-sm: 4px;
+  --notion-radius: 8px;
+  --notion-radius-lg: 12px;
+  --notion-radius-xl: 16px;
+}
+* { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif !important; }
+body { background: var(--notion-bg) !important; color: var(--notion-text) !important; -webkit-font-smoothing: antialiased; }
+
+/* Header — warm white, minimal */
+.header { background: var(--notion-bg) !important; border-bottom: 1px solid var(--notion-border) !important; box-shadow: none !important; }
+.header-top { background: var(--notion-bg) !important; padding: 14px 24px !important; max-width: 1200px; margin: 0 auto; }
+.logo { color: var(--notion-text) !important; font-size: 16px !important; font-weight: 700 !important; letter-spacing: -0.3px; }
+.logo strong { color: var(--notion-text) !important; font-weight: 700 !important; margin-left: 6px; }
+.header-links a { color: var(--notion-text-2) !important; font-size: 14px !important; font-weight: 500 !important; }
+.header-links a:hover { color: var(--notion-text) !important; }
+.nav { background: var(--notion-bg) !important; border-top: none !important; border-bottom: 1px solid var(--notion-border) !important; }
+.nav-inner { max-width: 1200px !important; padding: 0 24px !important; }
+.nav-inner a { color: var(--notion-text-2) !important; padding: 14px 18px !important; font-size: 15px !important; font-weight: 600 !important; border-bottom: 2px solid transparent !important; transition: color 0.15s; }
+.nav-inner a:hover { color: var(--notion-text) !important; background: transparent !important; }
+.nav-inner a.active { color: var(--notion-text) !important; border-bottom-color: var(--notion-text) !important; background: transparent !important; }
+.nav-inner a.disabled { color: #d4d2d0 !important; }
+
+/* Page banner — soft warm */
+.page-banner { background: var(--notion-bg-2) !important; color: var(--notion-text) !important; padding: 72px 24px 56px !important; text-align: left !important; border-bottom: 1px solid var(--notion-border) !important; }
+.page-banner > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+.page-banner h1 { font-size: 48px !important; font-weight: 700 !important; line-height: 1.05 !important; letter-spacing: -1.5px !important; color: var(--notion-text) !important; margin-bottom: 12px !important; }
+.page-banner p { font-size: 18px !important; color: var(--notion-text-2) !important; font-weight: 400 !important; }
+.breadcrumb { color: var(--notion-text-3) !important; font-size: 13px !important; margin-top: 16px !important; }
+.update-badge { background: var(--notion-blue-bg) !important; color: var(--notion-blue-text) !important; border: none !important; border-radius: 9999px !important; padding: 6px 14px !important; font-size: 12px !important; font-weight: 600 !important; display: inline-block; margin-top: 14px; }
+
+/* Container */
+.container { max-width: 1200px !important; padding: 48px 24px !important; }
+
+/* Stats row / stat-card */
+.stats-row, .crawl-stats { gap: 16px !important; }
+.stat-card, .crawl-stat { background: var(--notion-bg) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius-lg) !important; box-shadow: var(--notion-shadow-card) !important; padding: 24px !important; }
+.stat-number, .crawl-stat-num { color: var(--notion-text) !important; font-weight: 700 !important; font-size: 32px !important; letter-spacing: -1px; }
+.stat-label, .crawl-stat-label { color: var(--notion-text-2) !important; font-size: 13px !important; font-weight: 500 !important; }
+
+/* Filter chips / tabs */
+.filter-chip, .tab-filter, .tag { background: var(--notion-bg-2) !important; border: 1px solid var(--notion-border) !important; color: var(--notion-text-2) !important; border-radius: 9999px !important; padding: 6px 14px !important; font-size: 13px !important; font-weight: 500 !important; }
+.filter-chip.active, .tab-filter.active { background: var(--notion-text) !important; color: var(--notion-bg) !important; border-color: var(--notion-text) !important; }
+.filter-chip .count { color: inherit !important; opacity: 0.7; }
+
+/* Search + create button */
+.search-box input { background: var(--notion-bg-2) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius) !important; padding: 10px 16px !important; font-size: 14px !important; }
+.search-box button, .create-btn, .btn-submit { background: var(--notion-blue) !important; color: #fff !important; border: none !important; border-radius: var(--notion-radius) !important; padding: 10px 20px !important; font-weight: 600 !important; font-size: 14px !important; box-shadow: none !important; transition: background 0.15s; }
+.search-box button:hover, .create-btn:hover, .btn-submit:hover { background: var(--notion-blue-hover) !important; }
+
+/* Generic cards (cert, study, job, contest) */
+.cert-card, .study-card, .job-card, .contest-card {
+  background: var(--notion-bg) !important;
+  border: 1px solid var(--notion-border) !important;
+  border-radius: var(--notion-radius-lg) !important;
+  box-shadow: var(--notion-shadow-card) !important;
+  transition: all 0.2s ease;
+}
+.cert-card:hover, .study-card:hover, .job-card:hover, .contest-card:hover {
+  border-color: rgba(0,0,0,0.2) !important;
+  box-shadow: var(--notion-shadow-hover) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Titles inside cards */
+.cert-title, .card-title, .job-title, .job-company { color: var(--notion-text) !important; font-weight: 600 !important; letter-spacing: -0.2px; }
+.card-desc, .job-details, .cert-sub, .card-org { color: var(--notion-text-2) !important; font-size: 14px !important; }
+.card-meta, .crawl-stat-label, .job-source, .card-deadline { color: var(--notion-text-3) !important; font-size: 12px !important; }
+
+/* Pill badges (tags, skills, categories) */
+.tag.cert, .tag.code, .tag.project, .tag.mkt,
+.cat-tag, .job-skill-tag, .recommend-tag,
+.tag.recruiting, .tag.closed {
+  background: var(--notion-blue-bg) !important;
+  color: var(--notion-blue-text) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 3px 10px !important;
+  letter-spacing: 0.1px;
+}
+.tag.recruiting { background: #ecfdf3 !important; color: #037a48 !important; }
+.tag.closed { background: #f4f3f1 !important; color: var(--notion-text-3) !important; }
+
+/* Job dday */
+.job-dday.urgent, .card-dday.urgent { color: #d73a32 !important; font-weight: 700 !important; }
+.job-dday.normal, .card-dday.normal { color: var(--notion-text) !important; }
+.job-dday.closed { color: var(--notion-text-3) !important; }
+.job-type-badge { background: var(--notion-blue-bg) !important; color: var(--notion-blue-text) !important; border: none !important; border-radius: 9999px !important; font-size: 11px !important; font-weight: 700 !important; padding: 4px 12px !important; text-transform: uppercase; letter-spacing: 0.5px; }
+.new-badge { background: #fef1ec !important; color: #d35400 !important; border: none !important; font-size: 10px !important; padding: 2px 8px !important; border-radius: 9999px !important; font-weight: 700 !important; }
+
+/* Join button */
+.join-btn, .apply-link { border-radius: var(--notion-radius) !important; font-weight: 600 !important; font-size: 13px !important; padding: 8px 16px !important; border: 1px solid var(--notion-border) !important; background: var(--notion-bg) !important; color: var(--notion-text) !important; text-decoration: none !important; display: inline-block; }
+.join-btn.open { background: var(--notion-blue) !important; color: #fff !important; border-color: var(--notion-blue) !important; }
+.join-btn.open:hover { background: var(--notion-blue-hover) !important; }
+.join-btn.joined { background: var(--notion-bg-2) !important; color: var(--notion-text) !important; }
+.join-btn.closed { background: var(--notion-bg-2) !important; color: var(--notion-text-3) !important; cursor: not-allowed; }
+.apply-link { color: var(--notion-blue) !important; border: none !important; padding: 0 !important; background: transparent !important; }
+
+/* Avatars */
+.avatar { border: 2px solid var(--notion-bg) !important; font-weight: 600 !important; }
+
+/* Contest card image block */
+.card-image { border-radius: var(--notion-radius-lg) var(--notion-radius-lg) 0 0 !important; background: var(--notion-bg-2) !important; color: var(--notion-text) !important; }
+.card-image-text { color: var(--notion-text) !important; opacity: 0.3; font-weight: 800 !important; letter-spacing: 2px; }
+.card-source-badge { background: rgba(255,255,255,0.9) !important; color: var(--notion-text) !important; border: 1px solid var(--notion-border) !important; font-weight: 600 !important; }
+.card-dday { background: var(--notion-text) !important; color: var(--notion-bg) !important; border-radius: 9999px !important; font-weight: 600 !important; padding: 4px 10px !important; }
+.card-dday.urgent { background: #d73a32 !important; color: #fff !important; }
+
+/* Prize */
+.card-prize { border-top: 1px solid var(--notion-border) !important; padding-top: 12px !important; }
+.prize-label { color: var(--notion-text-3) !important; }
+.prize-value { color: var(--notion-text) !important; font-weight: 700 !important; }
+
+/* Modal */
+.modal { background: var(--notion-bg) !important; border-radius: var(--notion-radius-xl) !important; box-shadow: 0 20px 60px rgba(0,0,0,0.15) !important; border: 1px solid var(--notion-border) !important; }
+.modal h2 { color: var(--notion-text) !important; font-weight: 700 !important; letter-spacing: -0.5px; }
+.form-group label { color: var(--notion-text-2) !important; font-weight: 600 !important; font-size: 13px !important; }
+.form-group input, .form-group select, .form-group textarea { background: var(--notion-bg) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius) !important; color: var(--notion-text) !important; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--notion-blue) !important; }
+.btn-cancel { background: var(--notion-bg) !important; border: 1px solid var(--notion-border) !important; color: var(--notion-text) !important; border-radius: var(--notion-radius) !important; }
+
+/* Recommend box */
+.recommend-box { background: var(--notion-bg-2) !important; border: 1px solid var(--notion-border) !important; border-radius: var(--notion-radius-lg) !important; }
+.recommend-box h3 { color: var(--notion-text) !important; }
+
+/* Footer */
+.footer { background: var(--notion-bg) !important; color: var(--notion-text-3) !important; border-top: 1px solid var(--notion-border) !important; padding: 48px 24px !important; }
+
+/* Update info banner */
+.update-info { background: var(--notion-blue-bg) !important; border-left: 3px solid var(--notion-blue) !important; border-radius: var(--notion-radius) !important; color: var(--notion-text) !important; padding: 14px 18px !important; }
+.update-info strong { color: var(--notion-blue) !important; }
+
 </style>
 </head>
 <body>
@@ -126,6 +280,9 @@
 </div>
 
 <div class="container">
+
+  <div class="update-info">🔄 <strong>자동 업데이트</strong> 매주 월·목 오전 9시 링커리어, 원티드, 잡코리아 등에서 최신 채용공고를 수집합니다. 마지막 업데이트: <strong id="lastUpdate">2026.04.08</strong></div>
+
 
   <!-- Crawl Stats -->
   <div class="crawl-stats">
@@ -195,211 +352,231 @@
   </div>
 
   <!-- Job List -->
-  <div class="job-list">
+    <div class="job-list">
 
-    <div class="job-card new">
-      <div class="job-type-badge intern">인턴</div>
-      <div class="job-info">
-        <div class="job-company">카카오 <span class="new-badge">NEW</span></div>
-        <div class="job-title">데이터분석 인턴 (2026 상반기)</div>
-        <div class="job-details">
-          <span>📍 판교</span>
-          <span>💰 월 250만원</span>
-          <span>⏱️ 3개월</span>
-          <span>🎓 재학/휴학 가능</span>
-        </div>
-        <div class="job-tags">
-          <span class="job-skill-tag">Python</span>
-          <span class="job-skill-tag">SQL</span>
-          <span class="job-skill-tag">Tableau</span>
-          <span class="job-skill-tag">데이터분석</span>
-        </div>
-      </div>
-      <div class="job-right">
-        <div class="job-dday urgent">D-5</div>
-        <div class="job-date">~03.22 마감</div>
-        <div class="job-source">via 원티드</div>
-      </div>
-    </div>
-
-    <div class="job-card new">
-      <div class="job-type-badge fulltime">신입</div>
-      <div class="job-info">
-        <div class="job-company">네이버 <span class="new-badge">NEW</span></div>
-        <div class="job-title">디지털마케팅 신입 채용 (Performance Marketing)</div>
-        <div class="job-details">
-          <span>📍 성남시</span>
-          <span>💰 회사내규</span>
-          <span>📋 정규직</span>
-        </div>
-        <div class="job-tags">
-          <span class="job-skill-tag">Google Ads</span>
-          <span class="job-skill-tag">GA4</span>
-          <span class="job-skill-tag">Meta Ads</span>
-          <span class="job-skill-tag">퍼포먼스마케팅</span>
-        </div>
-      </div>
-      <div class="job-right">
-        <div class="job-dday urgent">D-7</div>
-        <div class="job-date">~03.24 마감</div>
-        <div class="job-source">via 잡코리아</div>
-      </div>
-    </div>
-
-    <div class="job-card new">
-      <div class="job-type-badge intern">인턴</div>
-      <div class="job-info">
-        <div class="job-company">롯데이커머스 <span class="new-badge">NEW</span></div>
-        <div class="job-title">CRM 마케팅 인턴 (데이터기반 고객분석)</div>
-        <div class="job-details">
-          <span>📍 서울 송파구</span>
-          <span>💰 월 200만원</span>
-          <span>⏱️ 6개월</span>
-        </div>
-        <div class="job-tags">
-          <span class="job-skill-tag">CRM</span>
-          <span class="job-skill-tag">SQL</span>
-          <span class="job-skill-tag">Excel</span>
-          <span class="job-skill-tag">고객분석</span>
-        </div>
-      </div>
-      <div class="job-right">
-        <div class="job-dday normal">D-14</div>
-        <div class="job-date">~03.31 마감</div>
-        <div class="job-source">via 사람인</div>
-      </div>
-    </div>
-
-    <div class="job-card">
-      <div class="job-type-badge fulltime">신입</div>
-      <div class="job-info">
-        <div class="job-company">쿠팡</div>
-        <div class="job-title">비즈니스 인텔리전스(BI) 분석가 신입</div>
-        <div class="job-details">
-          <span>📍 서울</span>
-          <span>💰 회사내규</span>
-          <span>📋 정규직</span>
-        </div>
-        <div class="job-tags">
-          <span class="job-skill-tag">SQL</span>
-          <span class="job-skill-tag">Python</span>
-          <span class="job-skill-tag">Looker</span>
-          <span class="job-skill-tag">데이터시각화</span>
-        </div>
-      </div>
-      <div class="job-right">
-        <div class="job-dday normal">D-21</div>
-        <div class="job-date">~04.07 마감</div>
-        <div class="job-source">via 원티드</div>
-      </div>
-    </div>
-
-    <div class="job-card">
-      <div class="job-type-badge contract">계약직</div>
-      <div class="job-info">
-        <div class="job-company">대전정보문화산업진흥원</div>
-        <div class="job-title">빅데이터 분석 연구원 (지역 데이터 프로젝트)</div>
-        <div class="job-details">
-          <span>📍 대전 서구</span>
-          <span>💰 월 280만원</span>
-          <span>⏱️ 12개월</span>
-        </div>
-        <div class="job-tags">
-          <span class="job-skill-tag">R</span>
-          <span class="job-skill-tag">Python</span>
-          <span class="job-skill-tag">빅데이터</span>
-          <span class="job-skill-tag">통계분석</span>
-        </div>
-      </div>
-      <div class="job-right">
-        <div class="job-dday normal">D-18</div>
-        <div class="job-date">~04.04 마감</div>
-        <div class="job-source">via 사람인</div>
-      </div>
-    </div>
-
+    <a href="https://linkareer.com/activity/307320" target="_blank" rel="noopener" class="job-card-link">
     <div class="job-card">
       <div class="job-type-badge intern">인턴</div>
       <div class="job-info">
-        <div class="job-company">SK텔레콤</div>
-        <div class="job-title">마케팅 데이터분석 인턴십 (Summer 2026)</div>
+        <div class="job-company">제일기획 </div>
+        <div class="job-title">2026년 대학생 인턴 (기획/데이터/제작)</div>
         <div class="job-details">
-          <span>📍 서울 중구</span>
-          <span>💰 월 250만원</span>
+          <span>📍 서울 용산</span>
+          <span>💰 실습비 지급</span>
           <span>⏱️ 2개월</span>
-          <span>🎓 재학생</span>
+          <span>🎓 2026 졸업예정</span>
         </div>
-        <div class="job-tags">
-          <span class="job-skill-tag">Python</span>
-          <span class="job-skill-tag">GA4</span>
-          <span class="job-skill-tag">마케팅분석</span>
-        </div>
+        <div class="job-tags"><span class="job-skill-tag">마케팅기획</span><span class="job-skill-tag">데이터분석</span><span class="job-skill-tag">광고제작</span></div>
       </div>
       <div class="job-right">
-        <div class="job-dday normal">D-30</div>
-        <div class="job-date">~04.16 마감</div>
+        <div class="job-dday closed">마감</div>
+        <div class="job-date">~03.17</div>
         <div class="job-source">via 링커리어</div>
       </div>
     </div>
+    </a>
 
+    <a href="https://linkareer.com/activity/307282" target="_blank" rel="noopener" class="job-card-link">
     <div class="job-card">
-      <div class="job-type-badge fulltime">경력무관</div>
+      <div class="job-type-badge intern">인턴</div>
       <div class="job-info">
-        <div class="job-company">(주)메조미디어</div>
-        <div class="job-title">콘텐츠마케팅 담당자</div>
+        <div class="job-company">삼성전자 DX부문 </div>
+        <div class="job-title">2026년 대학생 인턴 (DX부문)</div>
         <div class="job-details">
-          <span>📍 서울 강남구</span>
-          <span>💰 3,000~3,500만원</span>
-          <span>📋 정규직</span>
+          <span>📍 수원/서울</span>
+          <span>💰 실습비+중식</span>
+          <span>⏱️ 2개월</span>
+          <span>🎓 재학생</span>
         </div>
-        <div class="job-tags">
-          <span class="job-skill-tag">콘텐츠기획</span>
-          <span class="job-skill-tag">SNS마케팅</span>
-          <span class="job-skill-tag">영상제작</span>
-        </div>
+        <div class="job-tags"><span class="job-skill-tag">SW개발</span><span class="job-skill-tag">AI</span><span class="job-skill-tag">데이터분석</span></div>
       </div>
       <div class="job-right">
-        <div class="job-dday normal">D-25</div>
-        <div class="job-date">~04.11 마감</div>
+        <div class="job-dday closed">마감</div>
+        <div class="job-date">~03.17</div>
+        <div class="job-source">via 링커리어</div>
+      </div>
+    </div>
+    </a>
+
+    <a href="https://linkareer.com/activity/307270" target="_blank" rel="noopener" class="job-card-link">
+    <div class="job-card">
+      <div class="job-type-badge intern">인턴</div>
+      <div class="job-info">
+        <div class="job-company">삼성전자 DS부문 </div>
+        <div class="job-title">2026년 대학생 인턴 (DS부문)</div>
+        <div class="job-details">
+          <span>📍 화성/평택</span>
+          <span>💰 실습비+중식</span>
+          <span>⏱️ 2개월</span>
+          <span>🎓 재학생</span>
+        </div>
+        <div class="job-tags"><span class="job-skill-tag">반도체</span><span class="job-skill-tag">SW</span><span class="job-skill-tag">AI</span></div>
+      </div>
+      <div class="job-right">
+        <div class="job-dday closed">마감</div>
+        <div class="job-date">~03.17</div>
+        <div class="job-source">via 링커리어</div>
+      </div>
+    </div>
+    </a>
+
+    <a href="https://recruit.lotte.co.kr/" target="_blank" rel="noopener" class="job-card-link">
+    <div class="job-card">
+      <div class="job-type-badge fulltime">신입</div>
+      <div class="job-info">
+        <div class="job-company">롯데그룹 </div>
+        <div class="job-title">2026 상반기 3·6·9·12 채용</div>
+        <div class="job-details">
+          <span>📍 전국</span>
+          <span>💰 회사내규</span>
+          <span>⏱️ 정규직</span>
+          <span>🎓 신입/인턴</span>
+        </div>
+        <div class="job-tags"><span class="job-skill-tag">마케팅</span><span class="job-skill-tag">영업</span></div>
+      </div>
+      <div class="job-right">
+        <div class="job-dday closed">마감</div>
+        <div class="job-date">~03.17</div>
         <div class="job-source">via 잡코리아</div>
       </div>
     </div>
+    </a>
 
-    <div class="job-card">
-      <div class="job-type-badge parttime">파트타임</div>
+    <a href="https://www.wanted.co.kr/company/179" target="_blank" rel="noopener" class="job-card-link">
+    <div class="job-card new">
+      <div class="job-type-badge fulltime">신입</div>
       <div class="job-info">
-        <div class="job-company">스타트업 A사</div>
-        <div class="job-title">그로스해킹/데이터분석 파트타임 (대전 소재)</div>
+        <div class="job-company">오늘의집 <span class="new-badge">NEW</span></div>
+        <div class="job-title">비즈니스 데이터 분석가 (신입)</div>
         <div class="job-details">
-          <span>📍 대전 유성구</span>
-          <span>💰 시급 15,000원</span>
-          <span>⏱️ 주 3일</span>
+          <span>📍 서울 서초</span>
+          <span>💰 회사내규</span>
+          <span>⏱️ 정규직</span>
+          <span>🎓 신입</span>
         </div>
-        <div class="job-tags">
-          <span class="job-skill-tag">그로스해킹</span>
-          <span class="job-skill-tag">A/B테스트</span>
-          <span class="job-skill-tag">GA4</span>
-        </div>
+        <div class="job-tags"><span class="job-skill-tag">SQL</span><span class="job-skill-tag">Python</span><span class="job-skill-tag">데이터분석</span></div>
       </div>
       <div class="job-right">
-        <div class="job-dday normal">D-10</div>
-        <div class="job-date">~03.27 마감</div>
+        <div class="job-dday normal">상시</div>
+        <div class="job-date">상시채용</div>
+        <div class="job-source">via 원티드</div>
+      </div>
+    </div>
+    </a>
+
+    <a href="https://www.wanted.co.kr/company/34792" target="_blank" rel="noopener" class="job-card-link">
+    <div class="job-card new">
+      <div class="job-type-badge fulltime">경력무관</div>
+      <div class="job-info">
+        <div class="job-company">이노바이드 <span class="new-badge">NEW</span></div>
+        <div class="job-title">Marketing 기획</div>
+        <div class="job-details">
+          <span>📍 서울</span>
+          <span>💰 회사내규</span>
+          <span>⏱️ 정규직</span>
+          <span>🎓 경력무관</span>
+        </div>
+        <div class="job-tags"><span class="job-skill-tag">마케팅캠페인</span><span class="job-skill-tag">영상제작</span></div>
+      </div>
+      <div class="job-right">
+        <div class="job-dday normal">상시</div>
+        <div class="job-date">상시채용</div>
+        <div class="job-source">via 원티드</div>
+      </div>
+    </div>
+    </a>
+
+    <a href="https://career.ringleplus.com/" target="_blank" rel="noopener" class="job-card-link">
+    <div class="job-card new">
+      <div class="job-type-badge intern">인턴</div>
+      <div class="job-info">
+        <div class="job-company">링글(Ringle) <span class="new-badge">NEW</span></div>
+        <div class="job-title">서비스기획 & 마케팅 인턴</div>
+        <div class="job-details">
+          <span>📍 서울</span>
+          <span>💰 인턴급여</span>
+          <span>⏱️ 상반기</span>
+          <span>🎓 대학생</span>
+        </div>
+        <div class="job-tags"><span class="job-skill-tag">서비스기획</span><span class="job-skill-tag">마케팅</span><span class="job-skill-tag">데이터분석</span></div>
+      </div>
+      <div class="job-right">
+        <div class="job-dday urgent">모집중</div>
+        <div class="job-date">상시</div>
+        <div class="job-source">via 링글채용</div>
+      </div>
+    </div>
+    </a>
+
+    <a href="https://www.incruit.com/company/1680137883/" target="_blank" rel="noopener" class="job-card-link">
+    <div class="job-card new">
+      <div class="job-type-badge intern">인턴</div>
+      <div class="job-info">
+        <div class="job-company">데이터마케팅코리아 <span class="new-badge">NEW</span></div>
+        <div class="job-title">데이터 마케팅 인턴</div>
+        <div class="job-details">
+          <span>📍 서울</span>
+          <span>💰 회사내규</span>
+          <span>⏱️ 상시</span>
+          <span>🎓 대학생</span>
+        </div>
+        <div class="job-tags"><span class="job-skill-tag">데이터분석</span><span class="job-skill-tag">마케팅</span><span class="job-skill-tag">SQL</span></div>
+      </div>
+      <div class="job-right">
+        <div class="job-dday normal">상시</div>
+        <div class="job-date">상시채용</div>
         <div class="job-source">via 인크루트</div>
       </div>
     </div>
+    </a>
+
+    <a href="https://news.seoul.go.kr/gov/archives/576393" target="_blank" rel="noopener" class="job-card-link">
+    <div class="job-card new">
+      <div class="job-type-badge intern">인턴</div>
+      <div class="job-info">
+        <div class="job-company">서울특별시 <span class="new-badge">NEW</span></div>
+        <div class="job-title">2026 서울영커리언스 인턴십</div>
+        <div class="job-details">
+          <span>📍 서울</span>
+          <span>💰 인건비 지원</span>
+          <span>⏱️ 하반기</span>
+          <span>🎓 대학생</span>
+        </div>
+        <div class="job-tags"><span class="job-skill-tag">마케팅</span><span class="job-skill-tag">기획</span><span class="job-skill-tag">데이터</span></div>
+      </div>
+      <div class="job-right">
+        <div class="job-dday normal">모집예정</div>
+        <div class="job-date">하반기</div>
+        <div class="job-source">via 서울시</div>
+      </div>
+    </div>
+    </a>
+
+    <a href="https://linkareer.com/activity/274951" target="_blank" rel="noopener" class="job-card-link">
+    <div class="job-card new">
+      <div class="job-type-badge intern">인턴</div>
+      <div class="job-info">
+        <div class="job-company">GC(녹십자) <span class="new-badge">NEW</span></div>
+        <div class="job-title">데이터/마케팅 분석 인턴 (채용연계형)</div>
+        <div class="job-details">
+          <span>📍 경기 용인</span>
+          <span>💰 인턴급여</span>
+          <span>⏱️ 6개월</span>
+          <span>🎓 대학생</span>
+        </div>
+        <div class="job-tags"><span class="job-skill-tag">데이터분석</span><span class="job-skill-tag">마케팅분석</span><span class="job-skill-tag">Python</span></div>
+      </div>
+      <div class="job-right">
+        <div class="job-dday urgent">모집중</div>
+        <div class="job-date">채용시 마감</div>
+        <div class="job-source">via 링커리어</div>
+      </div>
+    </div>
+    </a>
 
   </div>
 
-  <!-- Pagination -->
-  <div class="pagination">
-    <button class="page-btn active">1</button>
-    <button class="page-btn">2</button>
-    <button class="page-btn">3</button>
-    <button class="page-btn">4</button>
-    <button class="page-btn">5</button>
-    <button class="page-btn">→</button>
   </div>
-</div>
 
 <div class="footer">
   목원대학교 마케팅빅데이터학과<br>
